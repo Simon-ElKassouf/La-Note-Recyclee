@@ -1,70 +1,59 @@
-/* ---- Palette éco-responsable ---- */
-:root {
-  --green-dark: #166534;
-  --green: #22c55e;
-  --green-light: #ecfdf5;
-  --beige: #fdf6e3;
-  --text-dark: #1f2937;
-  --text-light: #ffffff;
+/* ---- Section Contact ---- */
+.contact {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--text-light);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-/* ---- Reset ---- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.contact h1 {
+  font-size: 2.2rem;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
 }
 
-body {
-  font-family: system-ui, sans-serif;
-  background: var(--green-light);
+.contact p {
+  margin-bottom: 2rem;
   color: var(--text-dark);
-  line-height: 1.6;
 }
 
-/* ---- Navbar ---- */
-.navbar {
-  background: var(--green-dark);
-  color: var(--text-light);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.navbar nav {
-  max-width: 1100px;
-  margin: auto;
+.contact-form {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--text-light);
-}
-
-.menu {
-  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
-  list-style: none;
+  text-align: left;
 }
 
-.menu a {
-  text-decoration: none;
-  color: var(--text-light);
-  transition: color 0.2s;
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: var(--green-dark);
 }
 
-.menu a:hover {
-  color: var(--green);
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
 }
 
-/* ---- Boutons ---- */
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--green-light);
+}
+
+.contact .btn {
+  align-self: center;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
   background: var(--green);
   color: var(--text-light);
   border-radius: 0.5rem;
@@ -73,6 +62,6 @@ body {
   transition: background 0.3s;
 }
 
-.btn:hover {
-  background: #16a34a;
+.contact .btn:hover {
+  background: #16a34a; /* vert légèrement plus foncé */
 }
