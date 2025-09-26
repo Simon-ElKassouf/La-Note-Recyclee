@@ -1,0 +1,146 @@
+/* ---- Palette éco-responsable ---- */
+:root {
+  --green-dark: #166534;   /* Vert profond */
+  --green: #71B340;        /* Vert clair */
+  --green-light: #ecfdf5;  /* Vert très pâle */
+  --beige: #fdf6e3;        /* Beige doux */
+  --text-dark: #1f2937;    /* Gris foncé */
+  --text-light: #ffffff;
+}
+
+/* ---- Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--green-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+  background: var(--green-dark);
+  color: var(--text-light);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.navbar nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text-light);
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: var(--green);
+}
+
+/* ---- Hero ---- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;        /* occupe toute la hauteur de l'écran */
+  padding: 6rem 1rem;
+  background: var(--beige);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;        /* encore plus grand */
+  line-height: 1.2;
+  color: var(--green-dark);
+  margin-bottom: 2rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--text-dark);
+}
+
+.hero .btn {
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: var(--green);
+  color: var(--text-light);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #16a34a; /* Vert un peu plus foncé */
+}
+
+
+/* ---- Section Actions ---- */
+.actions {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--text-light);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
