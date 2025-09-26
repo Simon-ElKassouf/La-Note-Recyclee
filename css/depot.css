@@ -1,118 +1,72 @@
-/* ---- Palette éco-responsable ---- */
-:root {
-  --green-dark: #166534;
-  --green: #22c55e;
-  --green-light: #ecfdf5;
-  --beige: #fdf6e3;
-  --text-dark: #1f2937;
-  --text-light: #ffffff;
-}
-
-/* ---- Reset ---- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: system-ui, sans-serif;
-  background: var(--green-light);
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-/* ---- Navbar ---- */
-.navbar {
-  background: var(--green-dark);
-  color: var(--text-light);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.navbar nav {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--text-light);
-}
-
-.menu {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-.menu a {
-  text-decoration: none;
-  color: var(--text-light);
-  transition: color 0.2s;
-}
-
-.menu a:hover {
-  color: var(--green);
-}
-
-/* ---- Boutons ---- */
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background: var(--green);
-  color: var(--text-light);
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #16a34a;
-}
-
-
-/* ---- Footer ---- */
-.footer {
-  background: var(--green-dark);
-  color: var(--text-light);
-  padding: 2rem 1rem;
-  margin-top: 3rem;
-}
-
-.footer-container {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+/* ---- Section Dépôt ---- */
+.depot {
+  max-width: 800px;
+  margin: 4rem auto 2rem;
+  padding: 2rem;
+  background: var(--text-light);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-.footer p {
-  font-size: 0.9rem;
+.depot h1 {
+  font-size: 2.5rem;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
 }
 
-.footer-menu {
+.depot p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+/* ---- Infos pratiques ---- */
+.depot-info {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.depot-info .card {
+  background: var(--text-light);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.depot-info .card h2 {
+  font-size: 1.5rem;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+}
+
+/* ---- FAQ ---- */
+.faq {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--text-light);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.faq h2 {
+  font-size: 1.5rem;
+  color: var(--green-dark);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.faq ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
   list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  padding: 0;
 }
 
-.footer-menu a {
-  color: var(--text-light);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.footer-menu a:hover {
-  color: var(--green);
+.faq li {
+  margin-bottom: 0.5rem;
 }

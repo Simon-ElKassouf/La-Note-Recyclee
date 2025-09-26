@@ -97,6 +97,43 @@ body {
   color: var(--green-dark);
 }
 
+/* ---- Section Local ---- */
+.local {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--text-light);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.local h1 {
+  font-size: 2.2rem;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+}
+
+.local p {
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+
+.local a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--green-dark);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.local a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
 .form-group input,
 .form-group textarea {
   width: 100%;
