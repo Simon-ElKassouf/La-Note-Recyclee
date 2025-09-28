@@ -38,6 +38,7 @@ body {
   padding: 1rem;
 }
 
+/* Logo */
 .logo {
   font-weight: bold;
   font-size: 1.2rem;
@@ -45,6 +46,14 @@ body {
   color: var(--text-light);
 }
 
+/* Conteneur de droite (menu + bouton login) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* espace entre le menu et le bouton connexion */
+}
+
+/* Menu */
 .menu {
   display: flex;
   gap: 1.5rem;
@@ -61,20 +70,21 @@ body {
   color: var(--green);
 }
 
-/* ---- Boutons ---- */
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background: var(--green);
-  color: var(--text-light);
+/* Bouton Connexion */
+.btn-login {
+  padding: 0.6rem 1.2rem;
+  background: var(--text-light);
+  color: var(--green-dark);
   border-radius: 0.5rem;
-  text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
 }
 
-.btn:hover {
-  background: #16a34a;
+.btn-login:hover,
+.btn-login.active {
+  background: var(--green);
+  color: var(--text-light);
 }
 
 
