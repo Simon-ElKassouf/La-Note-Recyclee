@@ -9,31 +9,30 @@
 }
 
 /* ---- Reset ---- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
+  height: 100%;
   font-family: system-ui, sans-serif;
   color: var(--text-dark);
   background: var(--beige);
-  height: 100vh;
-  display: flex;
 }
 
 /* ---- Container général ---- */
 .login-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  height: 100vh;
+  display: flex;
+  height: 100vh;       /* occupe tout l'écran */
+  overflow: hidden;    /* pas de scroll vertical */
 }
 
 /* ---- Colonne gauche ---- */
-
 .login-left {
+  flex: 0 0 45%;       /* prend 45% de largeur */
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .login-left .branding {
@@ -44,41 +43,32 @@ body {
 }
 
 .login-left .branding .logo {
-  max-width: 150px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  padding: 4px;
+  object-fit: cover;
 }
-
 
 .login-left .illustration img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  transform: scale(0.95);  /* 95% de la taille, dézoom */
-  transform-origin: center center; 
-}
-
-.branding .logo {
-  max-width: 150px;
-  margin-bottom: 2rem;
-}
-
-.illustration img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.75rem;
-  object-fit: cover;
 }
 
 /* ---- Colonne droite ---- */
 .login-right {
-  background: var(--text-light);
+  flex: 0 0 55%;       /* prend le reste */
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  padding: 2rem 3rem;
+  align-items: center;
+  padding: 3rem;
   position: relative;
 }
 
+/* ---- Bouton retour ---- */
 .back-link {
   position: absolute;
   top: 1rem;
@@ -96,8 +86,8 @@ body {
 
 /* ---- Carte de connexion ---- */
 .login-card {
+  width: 100%;
   max-width: 400px;
-  margin: auto;
   padding: 2rem;
   background: var(--green-light);
   border-radius: 0.75rem;
@@ -111,6 +101,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* ---- Formulaire ---- */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -139,7 +130,7 @@ body {
   box-shadow: 0 0 0 2px var(--green-light);
 }
 
-/* ---- Bouton ---- */
+/* ---- Bouton principal ---- */
 .btn {
   width: 100%;
   padding: 1rem;
@@ -158,7 +149,7 @@ body {
   background: #16a34a;
 }
 
-/* ---- Liens ---- */
+/* ---- Liens secondaires ---- */
 .login-links {
   margin-top: 1rem;
   text-align: center;
@@ -173,4 +164,27 @@ body {
 
 .login-links a:hover {
   text-decoration: underline;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left {
+    flex: 0 0 auto;
+    height: 250px;
+  }
+
+  .login-right {
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .login-left .branding .logo {
+    height: 70px;
+    width: 70px;
+  }
 }

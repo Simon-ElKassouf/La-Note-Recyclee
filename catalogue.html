@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="css/catalogue.css">
 </head>
 <body>
-  <!-- Navbar -->
+<!-- Navbar -->
 <header class="navbar">
   <nav>
-    <a href="index.html" class="logo">La Note Recyclée</a>
+    <img href="index.html" src="images/logo.jpg" class="logo" alt="Logo La Note Recyclée">
     <div class="nav-right">
       <ul class="menu">
         <li><a href="index.html">Accueil</a></li>
@@ -22,6 +22,79 @@
     </div>
   </nav>
 </header>
+
+ <!-- Catalogue -->
+  <section class="catalogue-container">
+    
+    <!-- Filtre gauche -->
+    <section class="catalogue-filters">
+      <h2>Filtres</h2>
+
+      <div class="filter-group">
+        <label for="type">Type d'instrument :</label>
+        <select id="type">
+          <option value="">Tous</option>
+          <option value="vent">Vent</option>
+          <option value="corde">Corde</option>
+          <option value="percussion">Percussion</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+      <label>Prix (€)</label>
+      <div class="range-container">
+        <input type="range" id="prix-min" min="0" max="500" step="5" value="50">
+        <input type="range" id="prix-max" min="0" max="500" step="5" value="250">
+      </div>
+      <span id="prix-value">50€ - 250€</span>
+      </div>
+
+
+    </section>
+
+    <!-- Zone des instruments -->
+<section class="catalogue-items">
+  <div class="item-grid">
+
+    <!-- Guitare -->
+    <div class="card">
+      <img src="images/guitare.jpg" alt="Guitare acoustique">
+      <h3>Guitare acoustique</h3>
+      <p>Une guitare récupérée, réparée et prête à jouer.</p>
+      <a href="#" class="btn">Acheter (fictif)</a>
+    </div>
+
+    <!-- Violoncelle -->
+    <div class="card">
+      <img src="images/violoncelle.jpg" alt="Violoncelle">
+      <h3>Violoncelle</h3>
+      <p>Un violoncelle restauré pour les amateurs et professionnels.</p>
+      <!-- Pas de bouton achat -->
+    </div>
+
+    <!-- Flûte -->
+    <div class="card">
+      <img src="images/flute.jpg" alt="Flûte">
+      <h3>Flûte</h3>
+      <p>Flûte traversière récupérée et vérifiée pour un son clair.</p>
+      <!-- Pas de bouton achat -->
+    </div>
+
+    <!-- Batterie -->
+    <div class="card">
+      <img src="images/batterie.jpg" alt="Batterie">
+      <h3>Batterie</h3>
+      <p>Batterie complète réassemblée avec des pièces récupérées.</p>
+      <!-- Pas de bouton achat -->
+    </div>
+
+  </div>
+</section>
+
+
+  </section>
+
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -35,5 +108,32 @@
       </ul>
     </div>
   </footer>
+
+  <script>
+  const sliderMin = document.getElementById('prix-min');
+  const sliderMax = document.getElementById('prix-max');
+  const output = document.getElementById('prix-value');
+
+  function updateRange() {
+    let min = parseInt(sliderMin.value);
+    let max = parseInt(sliderMax.value);
+
+    if (min > max) {
+      // Empêche que le minimum dépasse le maximum
+      [sliderMin.value, sliderMax.value] = [max, min];
+      [min, max] = [max, min];
+    }
+
+    output.textContent = min + '€ - ' + max + '€';
+  }
+
+  // Mise à jour dynamique
+  sliderMin.addEventListener('input', updateRange);
+  sliderMax.addEventListener('input', updateRange);
+
+  // Initialisation
+  updateRange();
+</script>
+
 </body>
 </html>

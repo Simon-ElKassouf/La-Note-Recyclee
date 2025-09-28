@@ -3,46 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion - La Note Recyclée</title>
+  <title>Mot de passe oublié - La Note Recyclée</title>
   <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
   <div class="login-container">
+
     <!-- Colonne gauche -->
     <div class="login-left">
       <div class="branding">
-        <img src="images/logo.jpg" alt="Logo La Note Recyclée" class="logo">
+        <img src="images/logo.jpg" alt="Logo" class="logo">
       </div>
       <div class="illustration">
-        <img src="images/illustration.jpg" alt="Illustration musicale">
+        <img src="images/illustration.jpg" alt="Illustration">
       </div>
     </div>
 
     <!-- Colonne droite -->
     <div class="login-right">
-      <a href="index.html" class="back-link">← Retour</a>
+      <a href="login.html" class="back-link">← Retour à la connexion</a>
 
       <div class="login-card">
-        <h1>Connexion</h1>
+        <h1>Mot de passe oublié</h1>
+
         <form class="login-form">
           <div class="form-group">
             <label for="email">Adresse email</label>
             <input type="email" id="email" name="email" placeholder="votre@email.fr" required>
           </div>
 
-          <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
-          </div>
-
-          <button type="submit" class="btn">Se connecter</button>
-
-          <div class="login-links">
-            <a href="mdp-oublie.html">Mot de passe oublié ?</a>
-            <p>Pas encore de compte ? <a href="inscription.html">Inscrivez-vous</a></p>
-          </div>
+          <button type="submit" class="btn">Envoyer</button>
         </form>
+
+        <div id="mdp-message" class="login-links"></div>
       </div>
+
     </div>
   </div>
 </body>

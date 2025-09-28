@@ -39,12 +39,12 @@ body {
 }
 
 /* Logo */
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--text-light);
-}
+.logo { 
+  height: 70px;       /* taille ajustée, tu peux descendre à 32px si besoin */
+  width: 70px;        /* largeur forcée pour un vrai carré */
+  border-radius: 50%;  /* rend l’image totalement ronde */
+  padding: 4px;        /* espace entre l’image et le bord blanc */
+} 
 
 /* Conteneur de droite (menu + bouton login) */
 .nav-right {

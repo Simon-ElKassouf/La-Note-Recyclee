@@ -1,10 +1,10 @@
 /* ---- Palette éco-responsable ---- */
 :root {
-  --green-dark: #166534;
-  --green: #22c55e;
-  --green-light: #ecfdf5;
-  --beige: #fdf6e3;
-  --text-dark: #1f2937;
+  --green-dark: #166534;   /* Vert profond */
+  --green: #71B340;        /* Vert clair */
+  --green-light: #ecfdf5;  /* Vert très pâle */
+  --beige: #fdf6e3;        /* Beige doux */
+  --text-dark: #1f2937;    /* Gris foncé */
   --text-light: #ffffff;
 }
 
@@ -17,7 +17,7 @@
 
 body {
   font-family: system-ui, sans-serif;
-  background: var(--green-light);
+  background: var(--beige);
   color: var(--text-dark);
   line-height: 1.6;
 }
@@ -40,17 +40,17 @@ body {
 
 /* Logo */
 .logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--text-light);
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  padding: 4px;
 }
 
 /* Conteneur de droite (menu + bouton login) */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* espace entre le menu et le bouton connexion */
+  gap: 1.5rem;
 }
 
 /* Menu */
@@ -66,7 +66,7 @@ body {
   transition: color 0.2s;
 }
 
-.menu a:hover {
+.menu a:hover, .menu a.active {
   color: var(--green);
 }
 
@@ -87,7 +87,110 @@ body {
   color: var(--text-light);
 }
 
+/* ---- Container catalogue ---- */
+.catalogue-container {
+  display: flex;
+  max-width: 1100px;
+  margin: 2rem auto;
+  gap: 2rem;
+}
 
+/* ---- Filtres gauche ---- */
+.catalogue-filters {
+  flex: 0 0 250px;
+  background: var(--text-light);  /* <-- fond blanc */
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.catalogue-filters h2 {
+  margin-bottom: 1rem;
+  color: var(--green-dark);
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.filter-group select,
+.filter-group input[type="range"] {
+  width: 100%;
+}
+
+/* Affichage valeur du range */
+#prix-value {
+  display: block;
+  text-align: right;
+  font-weight: bold;
+  margin-top: 0.3rem;
+}
+
+/* ---- Zone des instruments ---- */
+.catalogue-items {
+  flex: 1;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---- Cartes d'instruments (exemple) ---- */
+.card {
+  background: var(--text-light);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.card .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--green);
+  color: var(--text-light);
+  border-radius: 0.3rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card .btn:hover {
+  background: #16a34a;
+}
 
 /* ---- Footer ---- */
 .footer {
@@ -126,4 +229,17 @@ body {
 
 .footer-menu a:hover {
   color: var(--green);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .catalogue-container {
+    flex-direction: column;
+  }
+
+  .catalogue-filters {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }

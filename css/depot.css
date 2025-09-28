@@ -1,3 +1,17 @@
+/* ---- Palette éco-responsable ---- */
+:root {
+  --green-dark: #166534;   /* Vert profond */
+  --green: #71B340;        /* Vert clair */
+  --green-light: #ecfdf5;  /* Vert très pâle */
+  --beige: #fdf6e3;        /* Beige doux */
+  --text-dark: #1f2937;    /* Gris foncé */
+  --text-light: #ffffff;
+}
+
+body {
+  background: var(--beige);
+}
+
 /* ---- Navbar ---- */
 .navbar {
   background: var(--green-dark);
@@ -15,11 +29,11 @@
 }
 
 /* Logo */
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--text-light);
+.logo { 
+  height: 70px;       /* taille ajustée, tu peux descendre à 32px si besoin */
+  width: 70px;        /* largeur forcée pour un vrai carré */
+  border-radius: 50%;  /* rend l’image totalement ronde */
+  padding: 4px;        /* espace entre l’image et le bord blanc */
 }
 
 /* Conteneur de droite (menu + bouton login) */
@@ -136,4 +150,43 @@
 
 .faq li {
   margin-bottom: 0.5rem;
+}
+
+/* ---- Footer ---- */
+.footer {
+  background: var(--green-dark);
+  color: var(--text-light);
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+
+.footer-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.footer-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-menu a:hover {
+  color: var(--green);
 }
