@@ -92,14 +92,14 @@ body {
   display: flex;
   max-width: 1100px;
   margin: 2rem auto;
-  gap: 2rem;
+  gap: 7rem;
 }
 
 /* ---- Filtres gauche ---- */
 .catalogue-filters {
   flex: 0 0 250px;
   background: var(--text-light);  /* <-- fond blanc */
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 0.5rem;
 }
 
