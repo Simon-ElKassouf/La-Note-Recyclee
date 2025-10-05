@@ -10,11 +10,11 @@
 <!-- Navbar -->
 <header class="navbar">
   <nav>
-    <img href="index.html" src="images/logo.jpg" class="logo" alt="Logo La Note Recyclée">
+    <a href="index.html"><img src="images/logo.jpg" class="logo" alt="Logo La Note Recyclée"></a>
     <div class="nav-right">
       <ul class="menu">
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="catalogue.html" class="active">Catalogue</a></li>
         <li><a href="depot.html">Dépôt</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -27,7 +27,7 @@
   <section class="catalogue-container">
     
     <!-- Filtre gauche -->
-    <section class="catalogue-filters">
+    <aside class="catalogue-filters">
       <h2>Filtres</h2>
 
       <div class="filter-group">
@@ -41,60 +41,54 @@
       </div>
 
       <div class="filter-group">
-      <label>Prix (€)</label>
-      <div class="range-container">
-        <input type="range" id="prix-min" min="0" max="500" step="5" value="50">
-        <input type="range" id="prix-max" min="0" max="500" step="5" value="250">
+        <label>Prix (€)</label>
+        <div class="range-container">
+          <input type="range" id="prix-min" min="0" max="500" step="5" value="50">
+          <input type="range" id="prix-max" min="0" max="500" step="5" value="250">
+        </div>
+        <span id="prix-value">50€ - 250€</span>
       </div>
-      <span id="prix-value">50€ - 250€</span>
-      </div>
-
-
-    </section>
+    </aside>
 
     <!-- Zone des instruments -->
-<section class="catalogue-items">
-  <div class="item-grid">
+    <section class="catalogue-items">
+      <div class="item-grid">
 
-    <!-- Guitare -->
-    <div class="card">
-      <img src="images/guitare.jpg" alt="Guitare acoustique">
-      <h3>Guitare acoustique</h3>
-      <p>Une guitare récupérée, réparée et prête à jouer.</p>
-      <a href="#" class="btn">Acheter (fictif)</a>
-    </div>
+        <!-- Guitare -->
+        <div class="card">
+          <img src="images/guitare.jpg" alt="Guitare acoustique">
+          <h3>Guitare acoustique</h3>
+          <p>Une guitare récupérée, réparée et prête à jouer.</p>
+          <a href="#" class="btn">Acheter</a>
+        </div>
 
-    <!-- Violoncelle -->
-    <div class="card">
-      <img src="images/violoncelle.jpg" alt="Violoncelle">
-      <h3>Violoncelle</h3>
-      <p>Un violoncelle restauré pour les amateurs et professionnels.</p>
-      <!-- Pas de bouton achat -->
-    </div>
+        <!-- Violoncelle -->
+        <div class="card">
+          <img src="images/violoncelle.jpg" alt="Violoncelle">
+          <h3>Violoncelle</h3>
+          <p>Un violoncelle restauré pour les amateurs et professionnels.</p>
+          <a href="#" class="btn">Acheter</a>
+        </div>
 
-    <!-- Flûte -->
-    <div class="card">
-      <img src="images/flute.jpg" alt="Flûte">
-      <h3>Flûte</h3>
-      <p>Flûte traversière récupérée et vérifiée pour un son clair.</p>
-      <!-- Pas de bouton achat -->
-    </div>
+        <!-- Flûte -->
+        <div class="card">
+          <img src="images/flute.jpg" alt="Flûte">
+          <h3>Flûte</h3>
+          <p>Flûte traversière récupérée et vérifiée pour un son clair.</p>
+          <a href="#" class="btn">Acheter</a>
+        </div>
 
-    <!-- Batterie -->
-    <div class="card">
-      <img src="images/batterie.jpg" alt="Batterie">
-      <h3>Batterie</h3>
-      <p>Batterie complète réassemblée avec des pièces récupérées.</p>
-      <!-- Pas de bouton achat -->
-    </div>
+        <!-- Batterie -->
+        <div class="card">
+          <img src="images/batterie.jpg" alt="Batterie">
+          <h3>Batterie</h3>
+          <p>Batterie complète réassemblée avec des pièces récupérées.</p>
+          <a href="#" class="btn">Acheter</a>
+        </div>
 
-  </div>
-</section>
-
-
+      </div>
+    </section>
   </section>
-
-
 
   <!-- Footer -->
   <footer class="footer">
@@ -119,7 +113,6 @@
     let max = parseInt(sliderMax.value);
 
     if (min > max) {
-      // Empêche que le minimum dépasse le maximum
       [sliderMin.value, sliderMax.value] = [max, min];
       [min, max] = [max, min];
     }
@@ -127,11 +120,8 @@
     output.textContent = min + '€ - ' + max + '€';
   }
 
-  // Mise à jour dynamique
   sliderMin.addEventListener('input', updateRange);
   sliderMax.addEventListener('input', updateRange);
-
-  // Initialisation
   updateRange();
 </script>
 
