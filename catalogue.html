@@ -11,7 +11,10 @@
 <header class="navbar">
   <nav>
     <a href="index.html"><img src="images/logo.jpg" class="logo" alt="Logo La Note Recyclée"></a>
-    <div class="nav-right">
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="nav-right">
       <ul class="menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="catalogue.html" class="active">Catalogue</a></li>
@@ -23,113 +26,104 @@
   </nav>
 </header>
 
- <!-- Catalogue -->
-  <section class="catalogue-container">
-    
-    <!-- Filtre gauche -->
-    <aside class="catalogue-filters">
-      <h2>Filtres</h2>
-
-      <div class="filter-group">
-        <label for="type">Type d'instrument :</label>
-        <select id="type">
-          <option value="">Tous</option>
-          <option value="vent">Vent</option>
-          <option value="corde">Corde</option>
-          <option value="percussion">Percussion</option>
-        </select>
-      </div>
-
-      <div class="filter-group">
-        <label>Prix (€)</label>
-        <div class="range-container">
-          <input type="range" id="prix-min" min="0" max="500" step="5" value="50">
-          <input type="range" id="prix-max" min="0" max="500" step="5" value="250">
-        </div>
-        <span id="prix-value">50€ - 250€</span>
-      </div>
-    </aside>
-
-    <!-- Zone des instruments -->
-    <section class="catalogue-items">
-      <div class="item-grid">
-
-        <!-- Guitare -->
-        <div class="card">
-          <img src="images/guitare.jpg" alt="Guitare acoustique">
-          <h3>Guitare acoustique</h3>
-          <p>Une guitare récupérée, réparée et prête à jouer.</p>
-          <span class="price">90 €</span>
-          <a href="#" class="btn">Réserver</a>
-        </div>
-
-        <!-- Violoncelle -->
-        <div class="card">
-          <img src="images/violoncelle.jpg" alt="Violoncelle">
-          <h3>Violoncelle</h3>
-          <p>Un violoncelle restauré pour les amateurs et professionnels.</p>
-          <span class="price">480 €</span>
-          <a href="#" class="btn">Réserver</a>
-        </div>
-
-        <!-- Flûte -->
-        <div class="card">
-          <img src="images/flute.jpg" alt="Flûte">
-          <h3>Flûte</h3>
-          <p>Flûte traversière récupérée et vérifiée pour un son clair.</p>
-          <span class="price">35 €</span>
-          <a href="#" class="btn">Réserver</a>
-        </div>
-
-        <!-- Batterie -->
-        <div class="card">
-          <img src="images/batterie.jpg" alt="Batterie">
-          <h3>Batterie</h3>
-          <p>Batterie complète réassemblée avec des pièces récupérées.</p>
-          <span class="price">310 €</span>
-          <a href="#" class="btn">Réserver</a>
-        </div>
-
-      </div>
-    </section>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>© 2025 La Note Recyclée</p>
-      <ul class="footer-menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="catalogue.html">Catalogue</a></li>
-        <li><a href="depot.html">Dépôt</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Connexion</a></li>
-        <li><a href="inscription.html">Inscription</a></li>
-        <li><a href="mdp-oublie.html">Mot de passe oublié</a></li>
-      </ul>
+<!-- Catalogue -->
+<section class="catalogue-container">
+  <!-- Filtres -->
+  <aside class="catalogue-filters">
+    <h2>Filtres</h2>
+    <div class="filter-group">
+      <label for="type">Type d'instrument :</label>
+      <select id="type">
+        <option value="">Tous</option>
+        <option value="vent">Vent</option>
+        <option value="corde">Corde</option>
+        <option value="percussion">Percussion</option>
+      </select>
     </div>
-  </footer>
+    <div class="filter-group">
+      <label>Prix (€)</label>
+      <div class="range-container">
+        <input type="range" id="prix-min" min="0" max="500" step="5" value="50">
+        <input type="range" id="prix-max" min="0" max="500" step="5" value="250">
+      </div>
+      <span id="prix-value">50€ - 250€</span>
+    </div>
+  </aside>
 
-  <script>
-  const sliderMin = document.getElementById('prix-min');
-  const sliderMax = document.getElementById('prix-max');
-  const output = document.getElementById('prix-value');
+  <!-- Instruments -->
+  <section class="catalogue-items">
+    <div class="item-grid">
+      <div class="card">
+        <img src="images/guitare.jpg" alt="Guitare acoustique">
+        <h3>Guitare acoustique</h3>
+        <p>Une guitare récupérée, réparée et prête à jouer.</p>
+        <span class="price">90 €</span>
+        <a href="#" class="btn">Réserver</a>
+      </div>
 
-  function updateRange() {
-    let min = parseInt(sliderMin.value);
-    let max = parseInt(sliderMax.value);
+      <div class="card">
+        <img src="images/violoncelle.jpg" alt="Violoncelle">
+        <h3>Violoncelle</h3>
+        <p>Un violoncelle restauré pour les amateurs et professionnels.</p>
+        <span class="price">480 €</span>
+        <a href="#" class="btn">Réserver</a>
+      </div>
 
-    if (min > max) {
-      [sliderMin.value, sliderMax.value] = [max, min];
-      [min, max] = [max, min];
-    }
+      <div class="card">
+        <img src="images/flute.jpg" alt="Flûte">
+        <h3>Flûte</h3>
+        <p>Flûte traversière récupérée et vérifiée pour un son clair.</p>
+        <span class="price">35 €</span>
+        <a href="#" class="btn">Réserver</a>
+      </div>
 
-    output.textContent = min + '€ - ' + max + '€';
-  }
+      <div class="card">
+        <img src="images/batterie.jpg" alt="Batterie">
+        <h3>Batterie</h3>
+        <p>Batterie complète réassemblée avec des pièces récupérées.</p>
+        <span class="price">310 €</span>
+        <a href="#" class="btn">Réserver</a>
+      </div>
+    </div>
+  </section>
+</section>
 
-  sliderMin.addEventListener('input', updateRange);
-  sliderMax.addEventListener('input', updateRange);
-  updateRange();
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2025 La Note Recyclée</p>
+    <ul class="footer-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="depot.html">Dépôt</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Connexion</a></li>
+      <li><a href="inscription.html">Inscription</a></li>
+      <li><a href="mdp-oublie.html">Mot de passe oublié</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+const burger = document.getElementById('burger');
+const navRight = document.getElementById('nav-right');
+burger.addEventListener('click', () => {
+  navRight.classList.toggle('active');
+  burger.classList.toggle('active');
+});
+
+const sliderMin = document.getElementById('prix-min');
+const sliderMax = document.getElementById('prix-max');
+const output = document.getElementById('prix-value');
+function updateRange() {
+  let min = parseInt(sliderMin.value);
+  let max = parseInt(sliderMax.value);
+  if (min > max) [sliderMin.value, sliderMax.value] = [max, min];
+  output.textContent = sliderMin.value + '€ - ' + sliderMax.value + '€';
+}
+sliderMin.addEventListener('input', updateRange);
+sliderMax.addEventListener('input', updateRange);
+updateRange();
 </script>
 
 </body>

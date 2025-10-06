@@ -10,8 +10,16 @@
 <!-- Navbar -->
 <header class="navbar">
   <nav>
-    <img href="index.html" src="images/logo.jpg" class="logo" alt="Logo La Note Recyclée">
-    <div class="nav-right">
+    <a href="index.html"><img src="images/logo.jpg" class="logo" alt="Logo La Note Recyclée"></a>
+
+    <!-- Menu burger -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-right" id="nav-right">
       <ul class="menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="catalogue.html">Catalogue</a></li>
@@ -23,71 +31,78 @@
   </nav>
 </header>
 
+<!-- Hero -->
+<section class="hero">
+  <h1>Donnons une seconde vie à la musique 🎶</h1>
+  <p>Une initiative éco-responsable pour réparer, transformer et partager la musique autrement.</p>
+  <a href="#about" class="btn">Découvrir le projet</a>
+</section>
 
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Donnons une seconde vie à la musique 🎶</h1>
-    <p>Une initiative éco-responsable pour réparer, transformer et partager la musique autrement.</p>
-    <a href="#about" class="btn">Découvrir le projet</a>
-  </section>
-
-    <!-- Section Présentation du projet -->
-  <section id="about" class="about">
-    <div class="about-content">
-      <div class="about-text">
-        <h2>Une ressourcerie musicale engagée</h2>
-        <p>
-          <strong>La Note Recyclée</strong> est une ressourcerie dédiée à la musique.  
-          Nous collectons, réparons et remettons en circulation des <strong>instruments de musique</strong>,
-          <strong>vinyles</strong>, <strong>enceintes</strong> et <strong>accessoires</strong> afin de leur offrir une seconde vie.
-        </p>
-        <p>
-          Nous encourageons le <strong>réemploi créatif</strong>, notamment à travers des instruments fabriqués
-          avec des matériaux recyclés.
-        </p>
-        <p>
-          Notre mission est de <strong>sensibiliser les habitants et les étudiants</strong>
-          à la réduction des déchets par la musique et à la préservation des ressources.
-        </p>
-      </div>
-      <div class="about-image">
-        <img src="images/instrument_reparation.jpg" alt="Réparation d’un instrument de musique">
-      </div>
+<!-- Section Présentation du projet -->
+<section id="about" class="about">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>Une ressourcerie musicale engagée</h2>
+      <p>
+        <strong>La Note Recyclée</strong> est une ressourcerie dédiée à la musique.  
+        Nous collectons, réparons et remettons en circulation des <strong>instruments de musique</strong>,
+        <strong>vinyles</strong>, <strong>enceintes</strong> et <strong>accessoires</strong> afin de leur offrir une seconde vie.
+      </p>
+      <p>
+        Nous encourageons le <strong>réemploi créatif</strong>, notamment à travers des instruments fabriqués
+        avec des matériaux recyclés.
+      </p>
+      <p>
+        Notre mission est de <strong>sensibiliser les habitants et les étudiants</strong>
+        à la réduction des déchets par la musique et à la préservation des ressources.
+      </p>
     </div>
-  </section>
-
-
-  <!-- Section Actions -->
-  <section class="actions">
-    <div class="card">
-      <h2>Déposer un instrument</h2>
-      <p>Vous avez un instrument inutilisé ? Offrez-lui une nouvelle vie en le déposant à la ressourcerie.</p>
-      <a href="depot.html" class="btn">Déposer un instrument</a>
+    <div class="about-image">
+      <img src="images/instrument_reparation.jpg" alt="Réparation d’un instrument de musique">
     </div>
-    <div class="card">
-      <h2>Acheter un instrument</h2>
-      <p>Découvrez des instruments réparés et uniques, disponibles à petit prix, pour faire vivre la musique autrement.</p>
-      <a href="catalogue.html" class="btn">Acheter un instrument</a>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>© 2025 La Note Recyclée</p>
-      <ul class="footer-menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="catalogue.html">Catalogue</a></li>
-        <li><a href="depot.html">Dépôt</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Connexion</a></li>
-        <li><a href="inscription.html">Inscription</a></li>
-        <li><a href="mdp-oublie.html">Mot de passe oublié</a></li>
-      </ul>
-    </div>
-  </footer>
+<!-- Section Actions -->
+<section class="actions">
+  <div class="card">
+    <h2>Déposer un instrument</h2>
+    <p>Vous avez un instrument inutilisé ? Offrez-lui une nouvelle vie en le déposant à la ressourcerie.</p>
+    <a href="depot.html" class="btn">Déposer un instrument</a>
+  </div>
+  <div class="card">
+    <h2>Acheter un instrument</h2>
+    <p>Découvrez des instruments réparés et uniques, disponibles à petit prix, pour faire vivre la musique autrement.</p>
+    <a href="catalogue.html" class="btn">Acheter un instrument</a>
+  </div>
+</section>
 
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2025 La Note Recyclée</p>
+    <ul class="footer-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="depot.html">Dépôt</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Connexion</a></li>
+      <li><a href="inscription.html">Inscription</a></li>
+      <li><a href="mdp-oublie.html">Mot de passe oublié</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // --- Burger menu toggle ---
+  const menuToggle = document.getElementById('menu-toggle');
+  const navRight = document.getElementById('nav-right');
+
+  menuToggle.addEventListener('click', () => {
+    navRight.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>

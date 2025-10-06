@@ -36,21 +36,22 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: relative;
 }
 
 /* Logo */
 .logo { 
-  height: 70px;       /* taille ajustée, tu peux descendre à 32px si besoin */
-  width: 70px;        /* largeur forcée pour un vrai carré */
-  border-radius: 50%;  /* rend l’image totalement ronde */
-  padding: 4px;        /* espace entre l’image et le bord blanc */
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  padding: 4px;
 } 
 
 /* Conteneur de droite (menu + bouton login) */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* espace entre le menu et le bouton connexion */
+  gap: 1.5rem;
 }
 
 /* Menu */
@@ -66,10 +67,10 @@ body {
   transition: color 0.2s;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a.active {
   color: var(--green);
 }
-
 
 /* Bouton Connexion */
 .btn-login {
@@ -88,6 +89,78 @@ body {
   color: var(--text-light);
 }
 
+/* ---- Burger ---- */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 100%;
+  height: 3px;
+  background: var(--text-light);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger.toggle div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.toggle div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ---- Section Local ---- */
+.local {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--text-light);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.local h1 {
+  font-size: 2.2rem;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+}
+
+.local p {
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.local img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.local a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--green-dark);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.local a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
 
 /* ---- Section Contact ---- */
 .contact {
@@ -125,43 +198,6 @@ body {
   color: var(--green-dark);
 }
 
-/* ---- Section Local ---- */
-.local {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background: var(--text-light);
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.local h1 {
-  font-size: 2.2rem;
-  color: var(--green-dark);
-  margin-bottom: 1rem;
-}
-
-.local p {
-  margin-bottom: 2rem;
-  color: var(--text-dark);
-}
-
-
-.local a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: var(--green-dark);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.local a:hover {
-  color: var(--green);
-  text-decoration: underline;
-}
-
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -192,7 +228,7 @@ body {
 }
 
 .contact .btn:hover {
-  background: #16a34a; /* vert légèrement plus foncé */
+  background: #16a34a;
 }
 
 /* ---- Footer ---- */
@@ -222,6 +258,7 @@ body {
   display: flex;
   gap: 1.5rem;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .footer-menu a {
@@ -232,4 +269,48 @@ body {
 
 .footer-menu a:hover {
   color: var(--green);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 850px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-right {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background: var(--green-dark);
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-right.nav-active {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn-login {
+    margin-top: 1rem;
+  }
+
+  .footer-menu {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .footer p {
+    text-align: center;
+  }
+
+  .local img {
+    max-width: 100%;
+    height: auto;
+  }
 }

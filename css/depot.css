@@ -8,8 +8,18 @@
   --text-light: #ffffff;
 }
 
+/* ---- Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: var(--beige);
+  font-family: system-ui, sans-serif;
+  background: var(--green-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 /* ---- Navbar ---- */
@@ -26,15 +36,16 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: relative;
 }
 
 /* Logo */
 .logo { 
-  height: 70px;       /* taille ajustée, tu peux descendre à 32px si besoin */
-  width: 70px;        /* largeur forcée pour un vrai carré */
-  border-radius: 50%;  /* rend l’image totalement ronde */
-  padding: 4px;        /* espace entre l’image et le bord blanc */
-}
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  padding: 4px;
+} 
 
 /* Conteneur de droite (menu + bouton login) */
 .nav-right {
@@ -56,7 +67,8 @@ body {
   transition: color 0.2s;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a.active {
   color: var(--green);
 }
 
@@ -77,6 +89,35 @@ body {
   color: var(--text-light);
 }
 
+/* ---- Burger ---- */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 100%;
+  height: 3px;
+  background: var(--text-light);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger.toggle div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.toggle div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 
 /* ---- Section Dépôt ---- */
 .depot {
@@ -100,7 +141,6 @@ body {
   color: var(--text-dark);
 }
 
-
 /* ---- Infos pratiques ---- */
 .depot-info {
   max-width: 1100px;
@@ -117,12 +157,28 @@ body {
   padding: 2rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.depot-info .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 .depot-info .card h2 {
   font-size: 1.5rem;
   color: var(--green-dark);
   margin-bottom: 1rem;
+}
+
+.depot-info .card a {
+  color: var(--green-dark);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.depot-info .card a:hover {
+  color: var(--green);
 }
 
 /* ---- FAQ ---- */
@@ -179,6 +235,7 @@ body {
   display: flex;
   gap: 1.5rem;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .footer-menu a {
@@ -189,4 +246,45 @@ body {
 
 .footer-menu a:hover {
   color: var(--green);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 850px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-right {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background: var(--green-dark);
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-right.nav-active {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn-login {
+    margin-top: 1rem;
+  }
+
+  /* Footer responsive */
+  .footer-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .footer p {
+    text-align: center;
+  }
 }
