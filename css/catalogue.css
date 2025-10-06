@@ -190,6 +190,14 @@ body {
   color: var(--text-dark);
 }
 
+.card .price {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+}
+
 .card .btn {
   display: inline-block;
   padding: 0.7rem 1.2rem;
